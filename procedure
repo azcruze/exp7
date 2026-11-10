@@ -1,0 +1,14 @@
+Procedure
+1. Started the Minikube Kubernetes cluster using Docker as the driver.
+2. Verified that the Kubernetes node was in the Ready state.
+3. Pulled the Python Flask application Docker image from Docker Hub.
+4. Created a Kubernetes Deployment YAML file named python-deployment.yaml.
+5. Configured the deployment with two replicas and container port 5000.
+6. Applied the deployment configuration to Kubernetes.
+7. Verified the deployment and checked the status of both pods.
+8. Waited for both Python application pods to reach the Running state.
+9. Created a Service YAML file named python-service.yaml.
+10. Configured the Service using NodePort to expose the application on port 5000.
+11. Applied the Service configuration and verified the service details.
+12. Retrieved the application URL using Minikube.
+13. Opened the URL in a web browser and verified that the Python Flask Demo App was running successfully.
