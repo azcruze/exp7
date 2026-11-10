@@ -1,0 +1,25 @@
+minikube start --driver=docker
+
+kubectl get nodes
+
+docker pull bencuk/python-demoapp:latest
+
+notepad python-deployment.yaml
+
+kubectl apply -f python-deployment.yaml
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl describe pod python-web-764b5f5f6f-2k6zd
+
+kubectl get pods
+
+notepad python-service.yaml
+
+kubectl apply -f python-service.yaml
+
+kubectl get services
+
+minikube service python-web-service --url
