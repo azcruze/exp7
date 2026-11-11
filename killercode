@@ -119,3 +119,57 @@ kubectl get pods
 
 
 Expected: No application resources remain in the default namespace.
+
+
+
+
+
+
+
+
+# 1. Check Kubernetes cluster
+kubectl get nodes
+
+# 2. Create Deployment
+kubectl create deployment myapp --image=hanuel018/flask-docker-app:latest
+
+# 3. Check Deployment
+kubectl get deployments
+
+# 4. Check Pods
+kubectl get pods
+
+# 5. Expose Deployment using NodePort
+kubectl expose deployment myapp --type=NodePort --port=5000 --target-port=5000
+
+# 6. Check Service
+kubectl get services
+
+# 7. Describe Deployment
+kubectl describe deployment myapp
+
+# 8. Port forwarding
+kubectl port-forward --address 0.0.0.0 service/myapp 8082:5000
+
+
+
+Open Killercoda Traffic Port Accessor → Host 1 → Custom Ports → 8082.
+
+Expected website output: Hello.
+
+After testing, press Ctrl + C, then execute:
+
+
+
+
+# 9. Delete Service
+kubectl delete service myapp
+
+# 10. Delete Deployment
+kubectl delete deployment myapp
+
+# 11. Verify deletion
+kubectl get deployments
+kubectl get services
+kubectl get pods
+
